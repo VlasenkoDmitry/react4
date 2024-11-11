@@ -5,8 +5,13 @@ import Circle from "../Circle/Circle";
 import AccordionExpandDefault from "../AccordionExpandDefault/AccordionExpandDefault";
 import SliderExpand from "../SliderExpand/SliderExpand";
 import TabsExpand from "../TabsExpand/TabsExpand";
+import { FC } from "react";
+import type { ProductPageProps } from "./product-page.types";
+// import * as Styled from "./product-card.styles";
+// import { Button } from "@ui-kit" -> from "../../../../ui-kit/button"
 
-export default function ProductCard() {
+
+const ProductPage: FC<ProductPageProps> = () => {
   const styles: string[] = ["#FF5733", "#33FF57", "#3357FF", "#F3FF33"];
 
   return (
@@ -88,6 +93,9 @@ export default function ProductCard() {
               </Box>
             </Box>
             <Box>
+                {/* <Styled.AddToWishListButton>
+                    Add to wishlist
+                </Styled.AddToWishListButton> */}
               <Button
                 variant="contained"
                 style={{ backgroundColor: "lightgray", marginRight: "20px" }}
@@ -108,3 +116,5 @@ export default function ProductCard() {
     </Box>
   );
 }
+
+export default ProductPage;
