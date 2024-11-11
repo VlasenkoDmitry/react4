@@ -18,14 +18,16 @@ import Blog from "./components/routes/Blog.tsx";
 import Docs from "./components/routes/Docs.tsx";
 import App from "./App.tsx";
 
+// import { ProductPage } from "@pages"
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />} errorElement={<ErrorPage />}>
       <Route index element={<Home />} />
       <Route path="shop" element={<Shop />} />
       <Route path="account/:accountID" element={<Account />} />
-      <Route path="pages" element={<Pages />} />
-      <Route path="page/:pageId" element={<Page />} />
+      <Route path="pages" element={<Pages />} /> {/* TODO: path="product" elemtnt={<ProductsPage />} */} 
+      <Route path="page/:pageId" element={<Page />} /> {/* TODO: path="product/:id" elemtnt={<ProductPage />} */} 
       <Route path="blog" element={<Blog />} />
       <Route path="docs" element={<Docs />} />
     </Route>
