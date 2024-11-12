@@ -13,7 +13,7 @@ import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { Typography } from "@mui/material";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import BasketBadgeBox from "../BasketBadgeBox/BasketBadgeBox";
+import BasketBadgeBox from "../../ui-kit/BasketBadgeBox/BasketBadgeBox";
 
 export default function Header() {
   const [open, setOpen] = React.useState(false);

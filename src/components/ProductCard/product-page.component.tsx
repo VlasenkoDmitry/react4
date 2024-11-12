@@ -1,7 +1,7 @@
 
 import { Box, Button, Container, Typography, Rating } from "@mui/material";
 import Grid from "@mui/material/Grid2";
-import Circle from "../Circle/Circle";
+import Circle from "../../ui-kit/Circle/Circle";
 import AccordionExpandDefault from "../AccordionExpandDefault/AccordionExpandDefault";
 import SliderExpand from "../SliderExpand/SliderExpand";
 import TabsExpand from "../TabsExpand/TabsExpand";

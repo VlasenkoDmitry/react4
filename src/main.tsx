@@ -8,14 +8,14 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-import ErrorPage from "./components/Error/ErrorPage.tsx";
-import Home from "./components/routes/Home.tsx";
-import Shop from "./components/routes/Shop.tsx";
-import Account from "./components/routes/Account.tsx";
-import Pages from "./components/routes/Pages.tsx";
-import Page from "./components/routes/Page.tsx";
-import Blog from "./components/routes/Blog.tsx";
-import Docs from "./components/routes/Docs.tsx";
+import ErrorPage from "./pages/ErrorPage.tsx";
+import Home from "./pages/Home.tsx";
+import Shop from "./pages/Shop.tsx";
+import Account from "./pages/Account.tsx";
+import Pages from "./pages/Pages.tsx";
+import Page from "./pages/Page.tsx";
+import Blog from "./pages/Blog.tsx";
+import Docs from "./pages/Docs.tsx";
 import App from "./App.tsx";
 
 // import { ProductPage } from "@pages"
