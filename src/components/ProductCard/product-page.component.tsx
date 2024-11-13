@@ -1,4 +1,3 @@
-
 import { Box, Button, Container, Typography, Rating } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import Circle from "../../ui-kit/Circle/Circle";
@@ -7,81 +6,44 @@ import SliderExpand from "../SliderExpand/SliderExpand";
 import TabsExpand from "../TabsExpand/TabsExpand";
 import { FC } from "react";
 import type { ProductPageProps } from "./product-page.types";
-// import * as Styled from "./product-card.styles";
+import * as Styled from "./product-page.styles";
 // import { Button } from "@ui-kit" -> from "../../../../ui-kit/button"
-
 
 const ProductPage: FC<ProductPageProps> = () => {
   const styles: string[] = ["#FF5733", "#33FF57", "#3357FF", "#F3FF33"];
 
   return (
-    <Box component="section" sx={{ backgroundColor: "#F9F9F9" }}>
-      <Container
-        // TODO: Use styled-components from material ui for styling
-        sx={{
-          maxWidth: "1920px",
-          padding: { md: "20px 120px", xs: "0px" },
-          display: "flex",
-          flexDirection: "column",
-          gap: "40px",
-        }}
+    <Styled.BoxMain>
+      <Styled.ContainerMain
+      // TODO: Use styled-components from material ui for styling
       >
-        <Grid
-          container
-          spacing={2}
-          sx={{
-            borderRadius: "10px",
-            width: "100%",
-            border: "1px",
-            backgroundColor: "#FFFFFF",
-            padding: "50px",
-          }}
-        >
-          <Grid
-            size={{ md: 7, xs: 12 }}
-            sx={{ padding: "50px", order: { xs: 0, md: 0 } }}
-          >
+        <Styled.GridMain container spacing={2}>
+          <Styled.GridInnerOne size={{ md: 7, xs: 12 }}>
             {/* Блок с изображениями */}
             <SliderExpand />
-          </Grid>
-          <Grid
-            size={{ md: 5, xs: 12 }}
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "20px",
-              order: { xs: 1, md: 1 },
-            }}
-          >
+          </Styled.GridInnerOne>
+          <Styled.GridInnerTwo size={{ md: 5, xs: 12 }}>
             {/* Контент справа */}
-            <Box sx={{ display: "flex", flexDirection: "row", gap: "20px" }}>
-              <Typography variant="h4" style={{ fontWeight: "bold" }}>
+            <Styled.TitleBox>
+              <Styled.OneTitleTypography variant="h4">
                 Drop 1
-              </Typography>
-              <Typography
-                variant="h4"
-                style={{ fontWeight: "bold" }}
-                color="lightGray"
-              >
+              </Styled.OneTitleTypography>
+              <Styled.TwoTitleTypography variant="h4" color="lightGray">
                 (4-pack)
-              </Typography>
-            </Box>
-            <Box sx={{ display: "flex", flexDirection: "row", gap: "20px" }}>
+              </Styled.TwoTitleTypography>
+            </Styled.TitleBox>
+            <Styled.ReviewBox>
               <Rating name="simple-controlled" defaultValue={4} />
               <Typography>10 Reviews</Typography>
-            </Box>
-            <Box sx={{ display: "flex", flexDirection: "row", gap: "20px" }}>
-              <Typography variant="h5" style={{ fontWeight: "bold" }}>
+            </Styled.ReviewBox>
+            <Styled.PriceBox>
+              <Styled.ActualPriceTypography variant="h5">
                 $150
-              </Typography>
-              <Typography
-                variant="h5"
-                style={{ fontWeight: "bold", textDecoration: "line-through" }}
-                color="lightGray"
-              >
+              </Styled.ActualPriceTypography>
+              <Styled.NoActualPriceTypography variant="h5" color="lightGray">
                 $280
-              </Typography>
-            </Box>
+              </Styled.NoActualPriceTypography>
+            </Styled.PriceBox>
             <Box>
               <Typography variant="subtitle1">Color</Typography>
               <Box>
@@ -93,15 +55,12 @@ const ProductPage: FC<ProductPageProps> = () => {
               </Box>
             </Box>
             <Box>
-                {/* <Styled.AddToWishListButton>
+              {/* <Styled.AddToWishListButton>
                     Add to wishlist
                 </Styled.AddToWishListButton> */}
-              <Button
-                variant="contained"
-                style={{ backgroundColor: "lightgray", marginRight: "20px" }}
-              >
+              <Styled.AddToWishListButton variant="contained">
                 Add to wishlist
-              </Button>
+              </Styled.AddToWishListButton>
               <Button variant="contained">Add to cart</Button>
             </Box>
             <Box>
@@ -109,12 +68,12 @@ const ProductPage: FC<ProductPageProps> = () => {
               <Typography>BlaBlaBlaBlaBlaBlaBlaBla</Typography>
             </Box>
             <AccordionExpandDefault />
-          </Grid>
-        </Grid>
+          </Styled.GridInnerTwo>
+        </Styled.GridMain>
         <TabsExpand />
-      </Container>
-    </Box>
+      </Styled.ContainerMain>
+    </Styled.BoxMain>
   );
-}
+};
 
 export default ProductPage;
