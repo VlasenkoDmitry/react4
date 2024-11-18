@@ -1,29 +1,25 @@
 import { Box, Button, Container, Typography, Rating } from "@mui/material";
-import Grid from "@mui/material/Grid2";
 import Circle from "../../ui-kit/Circle/Circle";
 import AccordionExpandDefault from "../AccordionExpandDefault/AccordionExpandDefault";
 import SliderExpand from "../SliderExpand/SliderExpand";
 import TabsExpand from "../TabsExpand/TabsExpand";
 import { FC } from "react";
-import type { ProductPageProps } from "./product-page.types";
-import * as Styled from "./product-page.styles";
-// import { Button } from "@ui-kit" -> from "../../../../ui-kit/button"
+import type { ProductPageProps } from "./Product-page.types";
+import * as Styled from "./Product-page.styles";
+import { AddToCardButton } from "@/ui-kit/AddToCardButton/AddToCardButton.component";
+import { AddToWishListButton } from "@/ui-kit/AddToWishListButton/AddToWishListButton.component";
 
 const ProductPage: FC<ProductPageProps> = () => {
   const styles: string[] = ["#FF5733", "#33FF57", "#3357FF", "#F3FF33"];
 
   return (
     <Styled.BoxMain>
-      <Styled.ContainerMain
-      // TODO: Use styled-components from material ui for styling
-      >
+      <Styled.ContainerMain>
         <Styled.GridMain container spacing={2}>
           <Styled.GridInnerOne size={{ md: 7, xs: 12 }}>
-            {/* Блок с изображениями */}
             <SliderExpand />
           </Styled.GridInnerOne>
           <Styled.GridInnerTwo size={{ md: 5, xs: 12 }}>
-            {/* Контент справа */}
             <Styled.TitleBox>
               <Styled.OneTitleTypography variant="h4">
                 Drop 1
@@ -55,13 +51,8 @@ const ProductPage: FC<ProductPageProps> = () => {
               </Box>
             </Box>
             <Box>
-              {/* <Styled.AddToWishListButton>
-                    Add to wishlist
-                </Styled.AddToWishListButton> */}
-              <Styled.AddToWishListButton variant="contained">
-                Add to wishlist
-              </Styled.AddToWishListButton>
-              <Button variant="contained">Add to cart</Button>
+              <AddToCardButton></AddToCardButton>
+              <AddToWishListButton></AddToWishListButton>
             </Box>
             <Box>
               <Typography>Product description</Typography>

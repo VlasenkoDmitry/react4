@@ -1,21 +1,24 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
-import Container from "@mui/material/Container";
-import Divider from "@mui/material/Divider";
 import MenuItem from "@mui/material/MenuItem";
 import Drawer from "@mui/material/Drawer";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import { Typography } from "@mui/material";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import BasketBadgeBox from "../../ui-kit/BasketBadgeBox/BasketBadgeBox";
+import BasketBadgeBox from "../../ui-kit/BasketBadgeBox/BasketBadgeBox.components";
+import NavButton from "@ui-kit/NavButton/NavButton.component";
+import * as Styled from "./Header.styles";
+import { HeartButton } from "@/ui-kit/HeartButton/HeartButton.component";
+import ThemeButton from "@/ui-kit/ThemeButtom/ThemeButtom.components";
 
-export default function Header() {
+interface HeaderProps {
+  onClick: () => void; // Определите тип пропса onClick
+}
+
+export default function Header({ onClick }: HeaderProps) {
   const [open, setOpen] = React.useState(false);
 
   const toggleDrawer = (newOpen: boolean) => () => {
@@ -23,51 +26,37 @@ export default function Header() {
   };
 
   return (
-    <AppBar
-      position="static"
-      sx={{
-        backgroundColor: "#FFFFFF",
-        backgroundImage: "none",
-      }}
-    >
-      <Container maxWidth="lg" sx={{ maxWidth: "1920px !important" }}>
+    <Styled.AppBarHeader position="static">
+      <Styled.AppBarContainer maxWidth="lg">
         <Toolbar>
-          <Box
-            sx={{
-              flexGrow: 1,
-              display: "flex",
-              justifyContent: "center",
-              px: 0,
-            }}
-          >
+          <Styled.ToolBarBox>
+            <ThemeButton onClick={onClick}>Переключить Тему</ThemeButton>
             <Box sx={{ display: { xs: "none", md: "flex" } }}>
-              <Button component="a" sx={{ color: "#252B42" }} href="/">
+              <NavButton color="#252B42" href="/">
                 Home
-              </Button>
-              <Button component="a" sx={{ color: "#252B42" }} href="/shop">
+              </NavButton>
+              <NavButton color="#252B42" href="/shop">
                 Shop
-              </Button>
-              <Button component="a" sx={{ color: "#252B42" }} href="/account/1">
+              </NavButton>
+              <NavButton color="#252B42" href="/account/1">
                 Account
-              </Button>
-              <Button component="a" sx={{ color: "#252B42" }} href="/pages">
+              </NavButton>
+              <NavButton color="#252B42" href="/pages">
                 Pages
-              </Button>
-              <Button component="a" sx={{ color: "#252B42" }} href="/blog">
+              </NavButton>
+              <NavButton color="#252B42" href="/blog">
                 Blog
-              </Button>
+              </NavButton>
             </Box>
-          </Box>
-          <Box
+          </Styled.ToolBarBox>
+          <Styled.BoxBasketBadgeBox
             sx={{
               display: { xs: "flex", md: "none" },
-              gap: 1,
-              alignItems: "center",
             }}
           >
             <BasketBadgeBox />
-          </Box>
-          <Box
+          </Styled.BoxBasketBadgeBox>
+          <Styled.BoxBasketBadgeBox
             sx={{
               display: { xs: "none", md: "flex" },
               gap: 1,
@@ -77,18 +66,14 @@ export default function Header() {
             <Button>
               <AccountCircleIcon></AccountCircleIcon>
             </Button>
-            <Typography
-              sx={{ color: "black", display: "flex", alignItems: "center" }}
-            >
-              My account
-            </Typography>
-            <Box sx={{ display: "flex", alignItems: "center" }}>
-              <FavoriteBorderIcon sx={{ color: "black" }}></FavoriteBorderIcon>
-            </Box>
+            <Styled.MyAccountTypography>My account</Styled.MyAccountTypography>
+            <Styled.IconBox>
+              <HeartButton color="black"></HeartButton>
+            </Styled.IconBox>
             <Box sx={{ display: "flex", alignItems: "center" }}>
               <BasketBadgeBox />
             </Box>
-          </Box>
+          </Styled.BoxBasketBadgeBox>
           <Box sx={{ display: { xs: "flex", md: "none" }, gap: 1 }}>
             <IconButton aria-label="Menu button" onClick={toggleDrawer(true)}>
               <MenuIcon />
@@ -103,17 +88,12 @@ export default function Header() {
                 },
               }}
             >
-              <Box sx={{ p: 2, backgroundColor: "background.default" }}>
-                <Box
-                  sx={{
-                    display: "flex",
-                    justifyContent: "flex-end",
-                  }}
-                >
+              <Box>
+                <Styled.BoxAccountData>
                   <IconButton onClick={toggleDrawer(false)}>
                     <CloseRoundedIcon />
                   </IconButton>
-                </Box>
+                </Styled.BoxAccountData>
 
                 <MenuItem component="a" href="/">
                   Home
@@ -130,23 +110,11 @@ export default function Header() {
                 <MenuItem component="a" href="/blog">
                   Blog
                 </MenuItem>
-
-                <Divider sx={{ my: 3 }} />
-                <MenuItem>
-                  <Button color="primary" variant="contained" fullWidth>
-                    Sign up
-                  </Button>
-                </MenuItem>
-                <MenuItem>
-                  <Button color="primary" variant="outlined" fullWidth>
-                    Sign in
-                  </Button>
-                </MenuItem>
               </Box>
             </Drawer>
           </Box>
         </Toolbar>
-      </Container>
-    </AppBar>
+      </Styled.AppBarContainer>
+    </Styled.AppBarHeader>
   );
 }

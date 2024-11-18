@@ -1,3 +1,3 @@
 export interface ProductPageProps {
-    test: string;
+  test: string;
 }

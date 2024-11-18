@@ -1,42 +1,32 @@
-
-
-import { AppBar, Button, Container, Toolbar } from "@mui/material";
+import NavButton from "@ui-kit/NavButton//NavButton.component";
+import { ContainerFooter, ToolbarFooter } from "./Footer.styles";
+import { AppBarFooter } from "@/ui-kit/AppBarFooter/AppBarFooter.components";
 
 export default function Footer() {
   return (
-    <AppBar
-      component="footer"
-      position="static"
-      sx={{ top: "auto", bottom: 0, backgroundColor: "#252B42" }}
-    >
-      <Container sx={{ maxWidth: "1920px !important" }}>
-        <Toolbar
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            flexDirection: { md: "row", xs: "column" },
-          }}
-        >
-          <Button component="a" sx={{ color: "#FFFFFF" }} href="/">
+    <AppBarFooter position="static">
+      <ContainerFooter>
+        <ToolbarFooter>
+          <NavButton color="#FFFFFF" href="/">
             Home
-          </Button>
-          <Button component="a" sx={{ color: "#FFFFFF" }} href="/shop">
+          </NavButton>
+          <NavButton color="#FFFFFF" href="/shop">
             Shop
-          </Button>
-          <Button component="a" sx={{ color: "#FFFFFF" }} href="/account/1">
+          </NavButton>
+          <NavButton color="#FFFFFF" href="/account/1">
             Account
-          </Button>
-          <Button component="a" sx={{ color: "#FFFFFF" }} href="/pages">
+          </NavButton>
+          <NavButton color="#FFFFFF" href="/pages">
             Pages
-          </Button>
-          <Button component="a" sx={{ color: "#FFFFFF" }} href="/blog">
+          </NavButton>
+          <NavButton color="#FFFFFF" href="/blog">
             Blog
-          </Button>
-          <Button component="a" sx={{ color: "#FFFFFF" }} href="docs">
+          </NavButton>
+          <NavButton color="#FFFFFF" href="/docs">
             Docs/Components
-          </Button>
-        </Toolbar>
-      </Container>
-    </AppBar>
+          </NavButton>
+        </ToolbarFooter>
+      </ContainerFooter>
+    </AppBarFooter>
   );
 }

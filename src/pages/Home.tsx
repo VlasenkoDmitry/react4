@@ -1,5 +1,5 @@
-import ProductCard from "../components/ProductCard/ProductCard";
+import ProductPage from "../components/Product-page/Product-page.component";
 
 export default function Home() {
-  return <ProductCard />;
+  return <ProductPage test={"test"} />;
 }
