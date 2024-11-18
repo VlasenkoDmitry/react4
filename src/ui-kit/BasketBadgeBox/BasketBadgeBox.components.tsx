@@ -1,6 +1,7 @@
 import Basket from "@/ui-kit/BasketBadgeBox/BasketBadgeBox.components"
 import {BasketBadge} from '@ui-kit/BasketBadgeBox/BasketBadgeBox.styles'
 import { Box } from "@mui/material";
+// TODO: Move to product detail page components folder
 
 export default function BasketBadgeBox() {
   return (

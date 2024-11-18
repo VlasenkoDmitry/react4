@@ -40,8 +40,7 @@ const router = createBrowserRouter(
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-
+      {/* TODO: Add theme provider */}
       <RouterProvider router={router} />
-
   </StrictMode>
 );
