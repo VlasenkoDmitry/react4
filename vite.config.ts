@@ -11,7 +11,8 @@ export default defineConfig({
           "@": path.resolve(__dirname, "./src"),
           "@ui-kit":path.resolve(__dirname, "./src/ui-kit"),
           "@components":path.resolve(__dirname, "./src/components"),
-          "@pages":path.resolve(__dirname, "./src/pages")
+          "@pages":path.resolve(__dirname, "./src/pages"),
+          "@public":path.resolve(__dirname, "./public")
         },
       },
 

@@ -1,0 +1,1 @@
+export {default} from './accordion-expand-default.component'

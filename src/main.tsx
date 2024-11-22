@@ -20,6 +20,11 @@ import App from "./App.tsx";
 
 // import { ProductPage } from "@pages"
 
+
+import { ThemeProvider } from "@mui/material";
+import { lightTheme, darkTheme } from "./theme/theme.tsx";
+import { CustomThemeProvider } from "./theme/theme-provider.tsx";
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />} errorElement={<ErrorPage />}>
@@ -40,7 +45,8 @@ const router = createBrowserRouter(
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-      {/* TODO: Add theme provider */}
+    <CustomThemeProvider>
       <RouterProvider router={router} />
+    </CustomThemeProvider>
   </StrictMode>
 );

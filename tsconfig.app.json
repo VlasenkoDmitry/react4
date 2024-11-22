@@ -28,7 +28,8 @@
       "@/*": ["src/*"],
       "@ui-kit/*": ["src/ui-kit/*"],
       "@components/*": ["src/components/*"],
-      "@pages/*": ["src/pages/*"]
+      "@pages/*": ["src/pages/*"],
+      "@public":["public/*"]
     }
   },
   "include": ["src/**/*"]
