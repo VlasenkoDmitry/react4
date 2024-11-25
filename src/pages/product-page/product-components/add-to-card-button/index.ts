@@ -1,1 +1,0 @@
-export {default} from './add-to-card-button.component'

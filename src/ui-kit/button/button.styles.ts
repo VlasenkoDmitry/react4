@@ -1,8 +1,6 @@
-// import { styled } from "@styled-components";
-// import { Button } from "@mui/material";
+import { styled } from "@mui/material/styles"; // Изменен импорт
+import { Button } from "@mui/material";
 
-// export const ButtonBase = styled(Button)`
-// // TODO: Setup colors from our custom theme.
-    
+export const ButtonBase = styled(Button)`
 
-// `
+`;

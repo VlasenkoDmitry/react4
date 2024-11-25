@@ -1,11 +1,9 @@
 import { FC } from "react";
+import { CircleProps } from "./circle.types";
 
 // TODO: Rename file. Circle.tsx -> circle.component.tsx. Open API.
 // TODO: Add props interface. Add Circle function type. 
 
-interface CircleProps {
-  color?: string;
-}
 
 const Circle: FC<CircleProps> = ({ color }) => {
   return (

@@ -1,35 +1,34 @@
-import NavButton from "@/ui-kit/navigation-button/navigation-button.component";
 import { ContainerFooter, ToolbarFooter } from "./footer.styles";
-import AppBarFooter from "./footer-components/app-bar-footer";
+import AppBarFooter from "./components/app-bar-footer";
+import Button from "@/ui-kit/button";
 
 function Footer() {
   return (
-    <AppBarFooter position="static">
+    <AppBarFooter position="static" color="secondary">
       <ContainerFooter>
         <ToolbarFooter>
-          <NavButton color="#FFFFFF" href="/">
+          <Button variant="text" href="/">
             Home
-          </NavButton>
-          <NavButton color="#FFFFFF" href="/shop">
+          </Button>
+          <Button variant="text" href="/">
             Shop
-          </NavButton>
-          <NavButton color="#FFFFFF" href="/account/1">
+          </Button>
+          <Button variant="text" href="/">
             Account
-          </NavButton>
-          <NavButton color="#FFFFFF" href="/pages">
-            Pages
-          </NavButton>
-          <NavButton color="#FFFFFF" href="/blog">
+          </Button>
+          <Button variant="text" href="/products">
+            Products
+          </Button>
+          <Button variant="text" href="/">
             Blog
-          </NavButton>
-          <NavButton color="#FFFFFF" href="/docs">
+          </Button>
+          <Button variant="text" href="/">
             Docs/Components
-          </NavButton>
+          </Button>
         </ToolbarFooter>
       </ContainerFooter>
     </AppBarFooter>
   );
 }
 
-
-export default Footer
+export default Footer;

@@ -1,1 +1,0 @@
-export {default} from './add-to-wish-list-button.component'
