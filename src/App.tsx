@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
-import Header from "@components/app-layout/header";
-import Footer from "@components/app-layout/footer";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
 import { useState } from "react";
 
 export default function App() {

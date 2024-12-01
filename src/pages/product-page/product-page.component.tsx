@@ -6,35 +6,11 @@ import { FC, useState } from "react";
 import type { ProductPageProps } from "./product-page.types";
 import * as Styled from "./product-page.styles";
 import Button from "@/ui-kit/button";
-import { useTheme } from "@mui/material/styles";
 import { Circle } from "@/ui-kit/circle";
 
 const ProductPage: FC<ProductPageProps> = () => {
   const styles: string[] = ["#FF5733", "#33FF57", "#3357FF", "#F3FF33"];
 
-  const theme = useTheme(); // Получите текущую тему
-  const [BackgroundAddToWishList, setBackgroundAddToWishList] = useState(
-    theme.palette.action.disabled
-  );
-  const [BackgroundAddToCard, setBackgroundAddToCard] = useState(
-    theme.palette.action.disabled
-  );
-
-  const handleClickAddToWishList = () => {
-    setBackgroundAddToWishList((prevState) =>
-      prevState === theme.palette.action.disabled
-        ? theme.palette.action.active
-        : theme.palette.action.disabled
-    );
-  };
-
-  const handleClickAddToCard = () => {
-    setBackgroundAddToCard((prevState) =>
-      prevState === theme.palette.action.disabled
-        ? theme.palette.action.active
-        : theme.palette.action.disabled
-    );
-  };
 
   return (
     <Styled.BoxMain>
@@ -84,19 +60,14 @@ const ProductPage: FC<ProductPageProps> = () => {
             <Styled.BoxButton>
               <Button
                 variant="contained"
-                style={{ backgroundColor: BackgroundAddToWishList }}
-                onClick={handleClickAddToWishList}
               >
-                {" "}
-                Add To Wishlist{" "}
+                Add To Wishlist
               </Button>
               <Button
                 variant="contained"
-                style={{ backgroundColor: BackgroundAddToCard }}
-                onClick={handleClickAddToCard}
               >
-                {" "}
-                Add To Card{" "}
+                
+                Add To Card
               </Button>
             </Styled.BoxButton>
             <Box>
